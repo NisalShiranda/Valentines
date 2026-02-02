@@ -26,7 +26,7 @@ const App: React.FC = () => {
       <BackgroundMusic />
       
       {accepted && (
-        <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-xl px-4 py-3 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-pink-100 flex gap-4 md:gap-8 z-[500] items-center transition-all">
+        <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-2xl px-6 py-3 rounded-full shadow-[0_15px_40px_rgba(244,114,182,0.3)] border border-pink-100 flex gap-5 md:gap-10 z-[500] items-center transition-all animate-pop-in">
           {[
             { id: 'home', icon: Heart, label: 'Home' },
             { id: 'timeline', icon: BookHeart, label: 'Story' },
@@ -38,58 +38,54 @@ const App: React.FC = () => {
             <button 
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`flex flex-col items-center gap-1 group ${activeTab === tab.id ? 'text-pink-600 scale-110' : 'text-gray-400 hover:text-pink-400'} transition-all`}
+              className={`flex flex-col items-center gap-1 group transition-all duration-300 ${activeTab === tab.id ? 'text-pink-600 scale-110 translate-y-[-4px]' : 'text-gray-400 hover:text-pink-400'}`}
             >
-              <tab.icon size={22} fill={activeTab === tab.id ? 'currentColor' : 'none'} className="group-hover:animate-bounce" />
-              <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-tighter">{tab.label}</span>
+              <tab.icon size={24} fill={activeTab === tab.id ? 'currentColor' : 'none'} className="group-hover:animate-pulse" />
+              <span className="text-[10px] font-bold uppercase tracking-tighter hidden md:block">{tab.label}</span>
             </button>
           ))}
         </nav>
       )}
 
-      <main className="container mx-auto px-4 pt-12 pb-32 max-w-4xl relative z-10">
+      <main className="container mx-auto px-4 pt-12 pb-40 max-w-4xl relative z-10">
         {!accepted ? (
-          <div className="flex flex-col items-center justify-center min-h-[80vh]">
+          <div className="flex flex-col items-center justify-center min-h-[85vh]">
             <ValentineRequest onAccept={handleAccept} />
           </div>
         ) : (
-          <div className="space-y-12 animate-fade-in">
+          <div className="space-y-16 animate-fade-in">
             {activeTab === 'home' && (
-              <div className="space-y-12">
-                <header className="text-center space-y-6">
-                  <div className="inline-block p-6 bg-white/80 backdrop-blur-sm rounded-full shadow-inner animate-pulse">
-                    <Heart className="text-pink-500 w-16 h-16 fill-pink-500 drop-shadow-[0_0_15px_rgba(236,72,153,0.5)]" />
+              <div className="space-y-16">
+                <header className="text-center space-y-8">
+                  <div className="relative inline-block p-8 bg-white/60 backdrop-blur-md rounded-full shadow-xl border border-white/80 animate-bounce-slow">
+                    <Heart className="text-pink-500 w-20 h-20 fill-pink-500 drop-shadow-[0_0_20px_rgba(236,72,153,0.6)]" />
                   </div>
-                  <div className="space-y-2">
-                    <h1 className="text-5xl md:text-8xl font-pacifico gradient-text leading-tight">My Beautiful Girl</h1>
-                    <p className="text-xl md:text-2xl text-gray-500 font-romantic font-bold">You are the best thing that ever happened to me...</p>
+                  <div className="space-y-4">
+                    <h1 className="text-6xl md:text-9xl font-pacifico bg-gradient-to-r from-pink-600 to-rose-400 bg-clip-text text-transparent py-2">My Angel</h1>
+                    <p className="text-2xl md:text-3xl text-gray-500 font-romantic font-bold italic">Distance is just a test of how far love can travel...</p>
                   </div>
                 </header>
 
                 <LoveDashboard />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="group bg-white/40 backdrop-blur-md p-10 rounded-[3rem] shadow-xl border border-white/60 hover:shadow-2xl hover:bg-white/60 transition-all duration-500">
-                    <div className="bg-pink-100 w-12 h-12 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <div className="group bg-white/50 backdrop-blur-xl p-12 rounded-[3.5rem] shadow-xl border border-white/80 hover:shadow-2xl hover:bg-white/70 transition-all duration-500 transform hover:-translate-y-2">
+                    <div className="bg-pink-100 w-14 h-14 rounded-3xl flex items-center justify-center mb-8 group-hover:rotate-12 transition-transform shadow-sm">
                        <MapPin className="text-pink-600" />
                     </div>
-                    <h3 className="text-3xl font-romantic font-bold text-pink-600 mb-4 tracking-wide">
-                      Distance Only Makes Us Stronger
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed italic text-lg">
-                      "I hate being away from you, but I love how it proves that our love is unshakeable. Every mile is a reminder of how much I can't wait to be by your side again."
+                    <h3 className="text-4xl font-romantic font-bold text-pink-600 mb-6">Our Invisible Thread</h3>
+                    <p className="text-gray-600 leading-relaxed italic text-xl">
+                      "Distance means so little when someone means so much. Every night I count the stars and know you're looking at the same ones."
                     </p>
                   </div>
                   
-                  <div className="group bg-white/40 backdrop-blur-md p-10 rounded-[3rem] shadow-xl border border-white/60 hover:shadow-2xl hover:bg-white/60 transition-all duration-500">
-                    <div className="bg-rose-100 w-12 h-12 rounded-2xl flex items-center justify-center mb-6 group-hover:-rotate-12 transition-transform">
+                  <div className="group bg-white/50 backdrop-blur-xl p-12 rounded-[3.5rem] shadow-xl border border-white/80 hover:shadow-2xl hover:bg-white/70 transition-all duration-500 transform hover:-translate-y-2">
+                    <div className="bg-rose-100 w-14 h-14 rounded-3xl flex items-center justify-center mb-8 group-hover:-rotate-12 transition-transform shadow-sm">
                        <Sparkles className="text-rose-600" />
                     </div>
-                    <h3 className="text-3xl font-romantic font-bold text-rose-600 mb-4 tracking-wide">
-                      Our Future Together
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed italic text-lg">
-                      "I dream about the day we don't have to say goodbye over FaceTime anymore. You're not just my girlfriend, you're my best friend and my future. I love you endlessly."
+                    <h3 className="text-4xl font-romantic font-bold text-rose-600 mb-6">Our Forever</h3>
+                    <p className="text-gray-600 leading-relaxed italic text-xl">
+                      "I can't wait to wake up to your beautiful face every single morning. The future looks so bright because you're in it."
                     </p>
                   </div>
                 </div>
@@ -107,8 +103,8 @@ const App: React.FC = () => {
         )}
       </main>
 
-      <footer className="fixed bottom-0 w-full text-center py-4 bg-transparent text-pink-300 text-[10px] tracking-widest uppercase pointer-events-none opacity-50">
-        Created for the girl who has my heart • Forever & Always
+      <footer className="fixed bottom-0 w-full text-center py-4 bg-gradient-to-t from-pink-50/50 to-transparent text-pink-300 text-[10px] tracking-[0.3em] uppercase pointer-events-none opacity-60">
+        Forever & Always • My Queen
       </footer>
     </div>
   );

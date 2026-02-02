@@ -6,13 +6,14 @@ const HeartBackground: React.FC = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const newHearts = Array.from({ length: 30 }).map((_, i) => ({
+    // Generate 40 unique hearts
+    const newHearts = Array.from({ length: 40 }).map((_, i) => ({
       id: i,
       left: `${Math.random() * 100}%`,
-      duration: `${8 + Math.random() * 8}s`,
-      size: `${10 + Math.random() * 25}px`,
-      delay: `${Math.random() * 10}s`,
-      opacity: 0.1 + Math.random() * 0.4
+      duration: `${10 + Math.random() * 15}s`,
+      size: `${15 + Math.random() * 25}px`,
+      delay: `${Math.random() * 20}s`,
+      opacity: 0.2 + Math.random() * 0.4
     }));
     setHearts(newHearts);
 
@@ -28,7 +29,7 @@ const HeartBackground: React.FC = () => {
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
       {/* Dynamic Glow following mouse */}
       <div 
-        className="absolute w-[600px] h-[600px] rounded-full bg-pink-200/20 blur-[120px] transition-all duration-1000 ease-out"
+        className="absolute w-[600px] h-[600px] rounded-full bg-pink-200/10 blur-[120px] transition-all duration-1000 ease-out"
         style={{
           transform: `translate(${mousePos.x - 300}px, ${mousePos.y - 300}px)`,
         }}
@@ -38,7 +39,7 @@ const HeartBackground: React.FC = () => {
       {hearts.map((h) => (
         <span
           key={h.id}
-          className="heart select-none"
+          className="heart-float select-none drop-shadow-sm"
           style={{
             left: h.left,
             animationDuration: h.duration,
@@ -53,7 +54,7 @@ const HeartBackground: React.FC = () => {
       ))}
 
       {/* Subtle Grid Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(#ff8fa3_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-10" />
+      <div className="absolute inset-0 bg-[radial-gradient(#ff8fa3_0.5px,transparent_0.5px)] [background-size:32px_32px] opacity-[0.05]" />
     </div>
   );
 };
