@@ -9,7 +9,7 @@ import SurpriseBox from './components/SurpriseBox.tsx';
 import LoveLetter from './components/LoveLetter.tsx';
 import LoveTimeline from './components/LoveTimeline.tsx';
 import OpenWhenEnvelopes from './components/OpenWhenEnvelopes.tsx';
-import LoveDashboard from './components/LoveDashboard.tsx';
+import LoveDashboard from './components/Lovedashboard.tsx';
 import BackgroundMusic from './components/BackgroundMusic.tsx';
 
 const App: React.FC = () => {
