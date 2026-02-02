@@ -1,19 +1,20 @@
 
 import React, { useState } from 'react';
-import { Heart, Camera, Sparkles, Send, MapPin, Gem, Clock, BookHeart, MailOpen } from 'lucide-react';
+import { Heart, Camera, Sparkles, Send, MapPin, BookHeart, MailOpen } from 'lucide-react';
 import HeartBackground from './components/HeartBackground.tsx';
 import ValentineRequest from './components/ValentineRequest.tsx';
 import PhotoGallery from './components/PhotoGallery.tsx';
 import LoveNotes from './components/LoveNotes.tsx';
 import SurpriseBox from './components/SurpriseBox.tsx';
-import PoemGenerator from './components/PoemGenerator.tsx';
+import LoveLetter from './components/LoveLetter.tsx';
 import LoveTimeline from './components/LoveTimeline.tsx';
 import OpenWhenEnvelopes from './components/OpenWhenEnvelopes.tsx';
 import LoveDashboard from './components/LoveDashboard.tsx';
+import BackgroundMusic from './components/BackgroundMusic.tsx';
 
 const App: React.FC = () => {
   const [accepted, setAccepted] = useState(false);
-  const [activeTab, setActiveTab] = useState<'home' | 'gallery' | 'notes' | 'ai' | 'timeline' | 'openwhen'>('home');
+  const [activeTab, setActiveTab] = useState<'home' | 'gallery' | 'notes' | 'letter' | 'timeline' | 'openwhen'>('home');
 
   const handleAccept = () => {
     setAccepted(true);
@@ -22,16 +23,17 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen relative text-gray-800 selection:bg-pink-200">
       <HeartBackground />
+      <BackgroundMusic />
       
       {accepted && (
-        <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-xl px-4 py-3 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-pink-100 flex gap-4 md:gap-8 z-50 items-center transition-all">
+        <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-xl px-4 py-3 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-pink-100 flex gap-4 md:gap-8 z-[500] items-center transition-all">
           {[
             { id: 'home', icon: Heart, label: 'Home' },
             { id: 'timeline', icon: BookHeart, label: 'Story' },
             { id: 'gallery', icon: Camera, label: 'Memories' },
             { id: 'openwhen', icon: MailOpen, label: 'Letters' },
             { id: 'notes', icon: Send, label: 'Notes' },
-            { id: 'ai', icon: Sparkles, label: 'Magic' },
+            { id: 'letter', icon: MailOpen, label: 'Write' },
           ].map((tab) => (
             <button 
               key={tab.id}
@@ -100,7 +102,7 @@ const App: React.FC = () => {
             {activeTab === 'gallery' && <PhotoGallery />}
             {activeTab === 'openwhen' && <OpenWhenEnvelopes />}
             {activeTab === 'notes' && <LoveNotes />}
-            {activeTab === 'ai' && <PoemGenerator />}
+            {activeTab === 'letter' && <LoveLetter />}
           </div>
         )}
       </main>
