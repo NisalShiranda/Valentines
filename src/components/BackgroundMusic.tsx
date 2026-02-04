@@ -24,7 +24,7 @@ const BackgroundMusic: React.FC = () => {
       <audio
         ref={audioRef}
         loop
-        src="https://cdn.pixabay.com/audio/2022/05/27/audio_1808f3030e.mp3"
+        src="./audio/song.mp3"
       />
       <button
         onClick={toggleMusic}
