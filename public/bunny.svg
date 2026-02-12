@@ -1,0 +1,30 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+.ears { animation: float 3s ease-in-out infinite; }
+</style>
+<g class="ears">
+<!-- Left Ear -->
+<path d="M18 12C18 5 22 2 25 2C28 2 30 8 28 16L24 24" fill="#FFE4E6" stroke="#FB7185" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22 14C22 14 24 12 25 14" stroke="#FDA4AF" stroke-width="2" stroke-linecap="round"/>
+<!-- Right Ear -->
+<path d="M46 12C46 5 42 2 39 2C36 2 34 8 36 16L40 24" fill="#FFE4E6" stroke="#FB7185" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42 14C42 14 40 12 39 14" stroke="#FDA4AF" stroke-width="2" stroke-linecap="round"/>
+</g>
+<!-- Head -->
+<circle cx="32" cy="36" r="18" fill="white" stroke="#FB7185" stroke-width="2"/>
+<!-- Eyes -->
+<circle cx="26" cy="34" r="2" fill="#374151"/>
+<circle cx="38" cy="34" r="2" fill="#374151"/>
+<!-- Cheeks -->
+<circle cx="23" cy="38" r="2" fill="#FDA4AF" opacity="0.6"/>
+<circle cx="41" cy="38" r="2" fill="#FDA4AF" opacity="0.6"/>
+<!-- Nose -->
+<path d="M30 38C30 38 32 40 34 38" stroke="#FB7185" stroke-width="1.5" stroke-linecap="round"/>
+<!-- Bow tie -->
+<path d="M28 52L36 52L32 56L28 52Z" fill="#FB7185"/>
+<circle cx="32" cy="52" r="2" fill="#F43F5E"/>
+</svg>
