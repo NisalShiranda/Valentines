@@ -171,7 +171,7 @@ const PhotoGallery: React.FC = () => {
               </div>
               <div className="mt-6 text-center">
                 <h4 className="font-romantic text-3xl text-gray-800 leading-none mb-2 px-2 truncate">{memory.title}</h4>
-                <p className="text-[10px] text-pink-400 font-bold uppercase tracking-[0.2em]">{memory.date}</p>
+
               </div>
 
               <div className="absolute top-6 right-6 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-all transform translate-x-4 group-hover:translate-x-0">
