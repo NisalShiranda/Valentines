@@ -25,12 +25,17 @@ const PhotoGallery: React.FC = () => {
   const INITIAL_MEMORIES: Memory[] = [
     {
       id: '1',
-      title: 'Our Special Day',
-      date: 'August 26, 2022',
+      title: 'Our Beautiful Moments',
+      date: 'Forever & Always',
       images: [
-        // 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800&auto=format&fit=crop', 
-        // Add your photos to public/memories/ folder and reference them like:
-        // '/memories/photo1.jpg', 
+        '/memories/WhatsApp%20Image%202026-02-09%20at%2022.39.43.jpeg',
+        '/memories/WhatsApp%20Image%202026-02-09%20at%2022.39.43%20(1).jpeg',
+        '/memories/WhatsApp%20Image%202026-02-09%20at%2022.39.43%20(3).jpeg',
+        '/memories/WhatsApp%20Image%202026-02-09%20at%2022.39.43%20(8).jpeg',
+        '/memories/WhatsApp%20Image%202026-02-09%20at%2022.39.43%20(9).jpeg',
+        '/memories/WhatsApp%20Image%202026-02-09%20at%2022.39.43%20(10).jpeg',
+        '/memories/WhatsApp%20Image%202026-02-09%20at%2022.39.43%20(11).jpeg',
+        '/memories/WhatsApp%20Image%202026-02-09%20at%2022.39.43%20(12).jpeg',
       ]
     }
   ];
